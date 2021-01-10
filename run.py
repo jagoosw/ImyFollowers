@@ -11,9 +11,9 @@ import pandas as pd
 
 def insta_info(account_name):
     html = requests.get('https://www.instagram.com/%s/'%(account_name)) 
+    print(html)
     soup = BeautifulSoup(html.text, 'lxml')
     data = soup.find_all('meta', attrs={'property':'og:description'})
-    print(data)
     text = data[0].get('content').split()
     user = '%s %s %s' % (text[-3], text[-2], text[-1])
     followers = text[0]
