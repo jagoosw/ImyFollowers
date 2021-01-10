@@ -2,7 +2,7 @@ name: py
 
 on:
   schedule:
-  - cron: “0/30 * * * *” #runs every half hour
+  - cron: “@hourly” #runs every half hour
 
 jobs:
   build:
